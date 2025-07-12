@@ -1,0 +1,1114 @@
+2025-07-11 10:43:11,738 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 10:43:11,738 - INFO - Cargando datos crudos
+2025-07-11 10:43:11,740 - ERROR - Error en data_loader: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\data/raw/employ25_3-4-5.csv'
+2025-07-11 10:43:11,740 - ERROR - Error en pipeline: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\data/raw/employ25_3-4-5.csv'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 19, in main
+    df = data_loader.load_and_filter()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\data_loader.py", line 11, in load_and_filter
+    df = pd.read_csv(PATHS['raw_data'], na_values=[" "])
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\data/raw/employ25_3-4-5.csv'
+2025-07-11 10:48:18,397 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 10:48:18,398 - INFO - Cargando datos crudos
+2025-07-11 10:48:18,547 - ERROR - Error en data_loader: 'ellipsis' object has no attribute 'split'
+2025-07-11 10:48:18,547 - ERROR - Error en pipeline: 'ellipsis' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 19, in main
+    df = data_loader.load_and_filter()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\data_loader.py", line 19, in load_and_filter
+    col_code, col_name = item.split(": ")
+                         ^^^^^^^^^^
+AttributeError: 'ellipsis' object has no attribute 'split'
+2025-07-11 10:57:44,806 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 10:57:44,807 - INFO - Cargando datos crudos
+2025-07-11 10:57:45,012 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 10:57:45,014 - INFO - Iniciando preprocesamiento
+2025-07-11 10:57:45,143 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 10:57:45,143 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 10:57:46,490 - ERROR - Error en reducci髇 dimensional: name 'np' is not defined
+2025-07-11 10:57:46,490 - ERROR - Error en pipeline: name 'np' is not defined
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 27, in reduce_dimensionality
+    plt.plot(range(1,10), np.cumsum(pca.explained_variance_ratio_), marker='o')
+                          ^^
+NameError: name 'np' is not defined
+2025-07-11 11:00:16,973 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:00:16,973 - INFO - Cargando datos crudos
+2025-07-11 11:00:17,140 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:00:17,142 - INFO - Iniciando preprocesamiento
+2025-07-11 11:00:17,252 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:00:17,252 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 11:00:17,644 - ERROR - Error en reducci髇 dimensional: name 'os' is not defined
+2025-07-11 11:00:17,644 - ERROR - Error en pipeline: name 'os' is not defined
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 29, in reduce_dimensionality
+    plt.savefig(os.path.join(BASE_DIR, 'reports/visuals/pca_variance.png'))
+                ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-07-11 11:01:25,413 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:01:25,413 - INFO - Cargando datos crudos
+2025-07-11 11:01:25,596 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:01:25,598 - INFO - Iniciando preprocesamiento
+2025-07-11 11:01:25,710 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:01:25,711 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 11:01:26,127 - ERROR - Error en reducci髇 dimensional: name 'BASE_DIR' is not defined
+2025-07-11 11:01:26,127 - ERROR - Error en pipeline: name 'BASE_DIR' is not defined
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 30, in reduce_dimensionality
+    plt.savefig(os.path.join(BASE_DIR, 'reports/visuals/pca_variance.png'))
+                             ^^^^^^^^
+NameError: name 'BASE_DIR' is not defined
+2025-07-11 11:04:51,532 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:04:51,532 - INFO - Cargando datos crudos
+2025-07-11 11:04:51,692 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:04:51,693 - INFO - Iniciando preprocesamiento
+2025-07-11 11:04:51,810 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:04:51,810 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 11:04:52,229 - ERROR - Error en reducci髇 dimensional: name 'BASE_DIR' is not defined
+2025-07-11 11:04:52,229 - ERROR - Error en pipeline: name 'BASE_DIR' is not defined
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 30, in reduce_dimensionality
+    plt.savefig(os.path.join(BASE_DIR, 'reports/visuals/pca_variance.png'))
+                             ^^^^^^^^
+NameError: name 'BASE_DIR' is not defined
+2025-07-11 11:06:40,007 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:06:40,007 - INFO - Cargando datos crudos
+2025-07-11 11:06:40,176 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:06:40,177 - INFO - Iniciando preprocesamiento
+2025-07-11 11:06:40,294 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:06:40,294 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 11:06:40,779 - ERROR - Error en reducci髇 dimensional: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\reports\\visuals\\pca_variance.png'
+2025-07-11 11:06:40,779 - ERROR - Error en pipeline: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\reports\\visuals\\pca_variance.png'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 33, in reduce_dimensionality
+    plt.savefig(PATHS['pca_variance_plot'])
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\pyplot.py", line 1228, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\figure.py", line 3395, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\backend_bases.py", line 2204, in print_figure
+    result = print_method(
+        filename,
+    ...<3 lines>...
+        bbox_inches_restore=_bbox_inches_restore,
+        **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\backend_bases.py", line 2054, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ~~~~^
+        *args, **{k: v for k, v in kwargs.items() if k not in skip}))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\backends\backend_agg.py", line 496, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\backends\backend_agg.py", line 445, in _print_pil
+    mpl.image.imsave(
+    ~~~~~~~~~~~~~~~~^
+        filename_or_obj, self.buffer_rgba(), format=fmt, origin="upper",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        dpi=self.figure.dpi, metadata=metadata, pil_kwargs=pil_kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\image.py", line 1676, in imsave
+    image.save(fname, **pil_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\PIL\Image.py", line 2600, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\destr\\Downloads\\ML_FINAL\\employ-kmeans\\reports\\visuals\\pca_variance.png'
+2025-07-11 11:07:03,429 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:07:03,429 - INFO - Cargando datos crudos
+2025-07-11 11:07:03,590 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:07:03,592 - INFO - Iniciando preprocesamiento
+2025-07-11 11:07:03,706 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:07:03,706 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 11:07:04,207 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 11:07:04,208 - INFO - Buscando k 髉timo
+2025-07-11 11:07:23,646 - INFO - K 髉timo sugerido: 4
+2025-07-11 11:07:29,792 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 11:07:29,839 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 11:07:29,839 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 11:07:31,911 - ERROR - Error en evaluaci髇: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+2025-07-11 11:07:31,911 - ERROR - Error en pipeline: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 40, in main
+    evaluator.evaluate_model(model, pca_df)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\evaluator.py", line 22, in evaluate_model
+    f.write("\U0001f4ca Evaluaci髇 del Modelo K-Means\n")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+2025-07-11 11:13:29,742 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:13:29,742 - INFO - Cargando datos crudos
+2025-07-11 11:13:29,900 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:13:29,901 - INFO - Iniciando preprocesamiento
+2025-07-11 11:13:30,025 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:13:30,025 - INFO - Iniciando reducci贸n dimensional
+2025-07-11 11:13:30,553 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 11:13:30,553 - INFO - Buscando k 贸ptimo
+2025-07-11 11:13:48,575 - INFO - K 贸ptimo sugerido: 4
+2025-07-11 11:13:51,109 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 11:13:51,136 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 11:13:51,136 - INFO - Generando reportes de evaluaci贸n y an谩lisis
+2025-07-11 11:13:53,085 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,096 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,151 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,160 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,223 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,234 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,333 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,345 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,444 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,454 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,567 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,575 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,701 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,709 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,838 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,846 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,991 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:53,999 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,156 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,166 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,334 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,342 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,515 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:54,523 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:13:55,112 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 11:13:55,114 - ERROR - Error en pipeline: evaluate_model() missing 1 required positional argument: 'df_pca'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 45, in main
+    evaluator.evaluate_model(model)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: evaluate_model() missing 1 required positional argument: 'df_pca'
+2025-07-11 11:23:41,162 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:23:41,162 - INFO - Cargando datos crudos
+2025-07-11 11:23:41,308 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:23:41,309 - INFO - Iniciando preprocesamiento
+2025-07-11 11:23:41,412 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:23:41,412 - INFO - Iniciando reducci贸n dimensional
+2025-07-11 11:23:41,935 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 11:23:41,938 - INFO - Buscando k 贸ptimo
+2025-07-11 11:23:44,359 - ERROR - Error en b煤squeda de k: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+2025-07-11 11:23:44,359 - ERROR - Error en pipeline: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 29, in main
+    optimal_k = k_finder.find_optimal_k()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\k_finder.py", line 22, in find_optimal_k
+    silhouettes.append(silhouette_score(df_pca, labels))
+                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\cluster\_unsupervised.py", line 139, in silhouette_score
+    return np.mean(silhouette_samples(X, labels, metric=metric, **kwds))
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\cluster\_unsupervised.py", line 303, in silhouette_samples
+    results = zip(*pairwise_distances_chunked(X, reduce_func=reduce_func, **kwds))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 2252, in pairwise_distances_chunked
+    D_chunk = pairwise_distances(X_chunk, Y, metric=metric, n_jobs=n_jobs, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 2480, in pairwise_distances
+    return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 1973, in _parallel_pairwise
+    return func(X, Y, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 388, in euclidean_distances
+    return _euclidean_distances(X, Y, X_norm_squared, Y_norm_squared, squared)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 424, in _euclidean_distances
+    distances = -2 * safe_sparse_dot(X, Y.T, dense_output=True)
+                ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+2025-07-11 11:26:38,841 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:26:38,842 - INFO - Cargando datos crudos
+2025-07-11 11:26:39,039 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:26:39,040 - INFO - Iniciando preprocesamiento
+2025-07-11 11:26:39,173 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:26:39,173 - INFO - Iniciando reducci贸n dimensional
+2025-07-11 11:26:39,869 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 11:26:39,869 - INFO - Buscando k 贸ptimo
+2025-07-11 11:27:02,613 - INFO - K 贸ptimo sugerido: 4
+2025-07-11 11:28:15,334 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 11:28:15,372 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 11:28:15,372 - INFO - Generando reportes de evaluaci贸n y an谩lisis
+2025-07-11 11:28:17,873 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:17,882 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:17,945 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:17,955 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,035 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,047 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,136 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,143 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,238 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,249 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,348 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,358 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,475 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,484 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,616 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,624 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,778 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,786 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,966 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:18,975 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:19,167 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:19,175 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:19,350 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:19,360 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:19,957 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 11:28:19,959 - INFO - Generando reportes de evaluaci贸n y an谩lisis
+2025-07-11 11:28:22,216 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,226 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,293 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,309 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,423 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,433 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,540 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,549 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,641 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,651 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,770 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,778 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,923 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:22,932 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,073 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,081 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,242 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,252 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,490 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,506 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,756 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:23,765 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:24,013 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:24,029 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 11:28:24,662 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 11:28:24,664 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 11:55:27,991 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 11:55:27,991 - INFO - Cargando datos crudos
+2025-07-11 11:55:28,180 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 11:55:28,181 - INFO - Iniciando preprocesamiento
+2025-07-11 11:55:28,298 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 11:55:28,298 - INFO - Iniciando reducci贸n dimensional
+2025-07-11 11:55:28,782 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 11:55:28,782 - INFO - Buscando k 贸ptimo
+2025-07-11 11:55:47,015 - INFO - K 贸ptimo sugerido: 4
+2025-07-11 11:55:49,267 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 11:55:49,268 - ERROR - Error en entrenamiento: A given column is not a column of the dataframe
+2025-07-11 11:55:49,268 - ERROR - Error en pipeline: A given column is not a column of the dataframe
+Traceback (most recent call last):
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'ETNIA'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_indexing.py", line 364, in _get_column_indices
+    col_idx = all_columns.get_loc(col)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'ETNIA'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 38, in main
+    model_pipeline = trainer.train_and_save(user_k, preprocessor_obj, pca_obj, processed_df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\trainer.py", line 22, in train_and_save
+    full_pipeline.fit(processed_df)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 654, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 588, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\joblib\memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\compose\_column_transformer.py", line 993, in fit_transform
+    self._validate_column_callables(X)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\compose\_column_transformer.py", line 552, in _validate_column_callables
+    transformer_to_input_indices[name] = _get_column_indices(X, columns)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_indexing.py", line 372, in _get_column_indices
+    raise ValueError("A given column is not a column of the dataframe") from e
+ValueError: A given column is not a column of the dataframe
+2025-07-11 12:14:25,770 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 12:14:25,770 - INFO - Cargando datos crudos
+2025-07-11 12:14:25,979 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 12:14:25,980 - INFO - Datos cargados y filtrados
+2025-07-11 12:14:25,980 - INFO - Iniciando preprocesamiento
+2025-07-11 12:14:26,009 - ERROR - Error en preprocesamiento: Shape of passed values is (9835, 29), indices imply (9835, 36)
+2025-07-11 12:14:26,010 - ERROR - Error en pipeline: Shape of passed values is (9835, 29), indices imply (9835, 36)
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 24, in main
+    processed_df = preprocessor.preprocess_data(df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\preprocessor.py", line 96, in preprocess_data
+    processed_df = pd.DataFrame(processed_array, columns=feature_names)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 827, in __init__
+    mgr = ndarray_to_mgr(
+        data,
+    ...<4 lines>...
+        typ=manager,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 336, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 420, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (9835, 29), indices imply (9835, 36)
+2025-07-11 12:24:03,481 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 12:24:03,481 - INFO - Cargando datos crudos
+2025-07-11 12:24:03,635 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 12:24:03,636 - INFO - Datos cargados y filtrados
+2025-07-11 12:24:03,636 - INFO - Iniciando preprocesamiento
+2025-07-11 12:24:03,690 - ERROR - Error en preprocesamiento: Shape of passed values is (9835, 36), indices imply (9835, 29)
+2025-07-11 12:24:03,690 - ERROR - Error en pipeline: Shape of passed values is (9835, 36), indices imply (9835, 29)
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 24, in main
+    processed_df = preprocessor.preprocess_data(df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\preprocessor.py", line 99, in preprocess_data
+    processed_df = pd.DataFrame(processed_data, columns=feature_names)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 827, in __init__
+    mgr = ndarray_to_mgr(
+        data,
+    ...<4 lines>...
+        typ=manager,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 336, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 420, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (9835, 36), indices imply (9835, 29)
+2025-07-11 12:25:57,551 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 12:25:57,551 - INFO - Cargando datos crudos
+2025-07-11 12:25:57,750 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 12:25:57,752 - INFO - Datos cargados y filtrados
+2025-07-11 12:25:57,752 - INFO - Iniciando preprocesamiento
+2025-07-11 12:25:57,969 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 12:25:57,981 - INFO - Preprocesador guardado en models/preprocessor.joblib
+2025-07-11 12:25:57,982 - INFO - Datos preprocesados
+2025-07-11 12:25:57,982 - INFO - Preprocesador y PCA configurados
+2025-07-11 12:25:57,982 - INFO - Buscando k 贸ptimo
+2025-07-11 12:25:57,984 - ERROR - Error en b煤squeda de k: Input X contains NaN.
+KMeans does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 12:25:57,984 - ERROR - Error en pipeline: Input X contains NaN.
+KMeans does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 33, in main
+    optimal_k = k_finder.find_optimal_k(processed_df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\k_finder.py", line 20, in find_optimal_k
+    labels = kmeans.fit_predict(df_processed)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\cluster\_kmeans.py", line 1064, in fit_predict
+    return self.fit(X, sample_weight=sample_weight).labels_
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\cluster\_kmeans.py", line 1454, in fit
+    X = validate_data(
+        self,
+    ...<5 lines>...
+        accept_large_sparse=False,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 1107, in check_array
+    _assert_all_finite(
+    ~~~~~~~~~~~~~~~~~~^
+        array,
+        ^^^^^^
+    ...<2 lines>...
+        allow_nan=ensure_all_finite == "allow-nan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<4 lines>...
+        input_name=input_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+KMeans does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 12:30:04,099 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 12:30:04,099 - INFO - Cargando datos crudos
+2025-07-11 12:30:04,260 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 12:30:04,261 - INFO - Datos cargados y filtrados
+2025-07-11 12:30:04,261 - INFO - Iniciando preprocesamiento
+2025-07-11 12:30:04,477 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 12:30:04,479 - INFO - Preprocesador guardado en models/preprocessor.joblib
+2025-07-11 12:30:04,479 - INFO - Datos preprocesados
+2025-07-11 12:30:04,479 - INFO - Preprocesador y PCA configurados
+2025-07-11 12:30:04,479 - INFO - Buscando k 贸ptimo
+2025-07-11 12:30:23,011 - INFO - K 贸ptimo sugerido: 5
+2025-07-11 12:30:23,011 - INFO - K 贸ptimo calculado: 5
+2025-07-11 16:13:43,650 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 16:13:43,650 - INFO - Cargando datos crudos
+2025-07-11 16:13:43,826 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 16:13:43,827 - INFO - Datos cargados y filtrados
+2025-07-11 16:13:43,827 - INFO - Iniciando preprocesamiento
+2025-07-11 16:13:43,949 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 16:13:43,949 - INFO - Datos preprocesados
+2025-07-11 16:13:43,949 - ERROR - Error en pipeline: module 'pipeline.preprocessor' has no attribute 'get_preprocessor'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 28, in main
+    preprocessor_obj = preprocessor.get_preprocessor()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pipeline.preprocessor' has no attribute 'get_preprocessor'
+2025-07-11 16:15:18,119 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 16:15:18,119 - INFO - Cargando datos crudos
+2025-07-11 16:15:18,299 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 16:15:18,301 - INFO - Iniciando preprocesamiento
+2025-07-11 16:15:18,421 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 16:15:18,421 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 16:15:19,063 - INFO - Buscando k 髉timo
+2025-07-11 16:15:39,492 - INFO - K 髉timo sugerido: 4
+2025-07-11 16:15:42,155 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 16:15:42,203 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 16:15:42,203 - INFO - Generando reportes de evaluaci髇
+2025-07-11 16:15:42,252 - INFO - Reportes guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/metrics.txt
+2025-07-11 16:15:42,252 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 16:21:18,283 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 16:21:18,283 - INFO - Cargando datos crudos
+2025-07-11 16:21:18,450 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 16:21:18,451 - INFO - Iniciando preprocesamiento
+2025-07-11 16:21:18,578 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 16:21:18,578 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 16:21:19,077 - INFO - Buscando k 髉timo
+2025-07-11 16:21:37,647 - INFO - K 髉timo sugerido: 4
+2025-07-11 16:21:40,946 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 16:21:40,986 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 16:21:40,987 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 16:21:42,851 - ERROR - Error en evaluaci髇: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+2025-07-11 16:21:42,851 - ERROR - Error en pipeline: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 38, in main
+    evaluator.evaluate_model(model, pca_df)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\evaluator.py", line 23, in evaluate_model
+    f.write("\U0001f4ca Evaluaci髇 del Modelo K-Means\n")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>
+2025-07-11 16:23:00,719 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 16:23:00,719 - INFO - Cargando datos crudos
+2025-07-11 16:23:00,888 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 16:23:00,889 - INFO - Iniciando preprocesamiento
+2025-07-11 16:23:01,014 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 16:23:01,014 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 16:23:01,539 - INFO - Buscando k 髉timo
+2025-07-11 16:23:20,007 - INFO - K 髉timo sugerido: 4
+2025-07-11 16:23:32,850 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 16:23:32,893 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 16:23:32,894 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 16:23:35,104 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,115 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,176 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,185 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,256 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,264 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,353 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,360 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,460 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,478 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,595 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,604 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,731 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,739 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,884 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:35,892 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,081 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,089 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,274 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,282 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,482 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,490 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,685 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:36,693 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:23:37,395 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 16:23:37,398 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 16:26:42,340 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 16:26:42,340 - INFO - Cargando datos crudos
+2025-07-11 16:26:42,533 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 16:26:42,535 - INFO - Iniciando preprocesamiento
+2025-07-11 16:26:42,683 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 16:26:42,683 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 16:26:43,250 - INFO - Buscando k 髉timo
+2025-07-11 16:27:03,306 - INFO - K 髉timo sugerido: 4
+2025-07-11 16:27:11,871 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 16:27:11,914 - INFO - Modelos guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 16:27:11,914 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 16:27:12,291 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,299 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,362 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,371 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,444 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,456 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,571 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,579 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,686 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,694 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,817 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,826 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,967 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:12,975 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,135 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,148 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,318 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,325 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,513 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,521 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,738 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,746 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,957 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:13,965 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 16:27:14,669 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 16:27:14,671 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 17:04:11,124 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:04:11,124 - INFO - Cargando datos crudos
+2025-07-11 17:04:11,334 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:04:11,335 - INFO - Iniciando preprocesamiento
+2025-07-11 17:04:11,512 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:04:11,512 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:04:12,273 - INFO - Buscando k 髉timo
+2025-07-11 17:04:34,294 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:04:37,476 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:04:37,506 - ERROR - Error en entrenamiento: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:04:37,506 - ERROR - Error en pipeline: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 36, in main
+    model = trainer.train_and_save(user_k, processed_df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\trainer.py", line 23, in train_and_save
+    full_pipeline.fit(processed_df)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 654, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 588, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\joblib\memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 468, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 505, in _fit
+    X = validate_data(
+        self,
+    ...<5 lines>...
+        copy=False,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 1107, in check_array
+    _assert_all_finite(
+    ~~~~~~~~~~~~~~~~~~^
+        array,
+        ^^^^^^
+    ...<2 lines>...
+        allow_nan=ensure_all_finite == "allow-nan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<4 lines>...
+        input_name=input_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:11:51,754 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:11:51,754 - INFO - Cargando datos crudos
+2025-07-11 17:11:52,042 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:11:52,045 - INFO - Iniciando preprocesamiento
+2025-07-11 17:11:52,204 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:11:52,204 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:11:52,248 - WARNING - Se encontraron 12280 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:11:57,688 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:11:57,689 - INFO - Buscando k 髉timo
+2025-07-11 17:12:21,288 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:12:21,288 - INFO - Cargando datos crudos
+2025-07-11 17:12:21,466 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:12:21,467 - INFO - Iniciando preprocesamiento
+2025-07-11 17:12:21,606 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:12:21,606 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:12:21,660 - WARNING - Se encontraron 12280 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:12:26,441 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:12:26,442 - INFO - Buscando k 髉timo
+2025-07-11 17:12:47,767 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:12:52,162 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:12:52,192 - ERROR - Error en entrenamiento: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:12:52,192 - ERROR - Error en pipeline: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 36, in main
+    model = trainer.train_and_save(user_k, processed_df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\trainer.py", line 23, in train_and_save
+    full_pipeline.fit(processed_df)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 654, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 588, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\joblib\memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 468, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 505, in _fit
+    X = validate_data(
+        self,
+    ...<5 lines>...
+        copy=False,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 1107, in check_array
+    _assert_all_finite(
+    ~~~~~~~~~~~~~~~~~~^
+        array,
+        ^^^^^^
+    ...<2 lines>...
+        allow_nan=ensure_all_finite == "allow-nan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<4 lines>...
+        input_name=input_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:13:39,206 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:13:39,206 - INFO - Cargando datos crudos
+2025-07-11 17:13:39,380 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:13:39,382 - INFO - Iniciando preprocesamiento
+2025-07-11 17:13:39,541 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:13:39,541 - ERROR - Error en pipeline: cannot access local variable 'df_imputed' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 25, in main
+    pca_df = dimensionality_reducer.reduce_dimensionality()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\dimensionality_reducer.py", line 15, in reduce_dimensionality
+    print("Valores NaN despu閟 de imputaci髇:", df_imputed.isnull().sum().sum())
+                                                ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'df_imputed' where it is not associated with a value
+2025-07-11 17:15:25,472 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:15:25,472 - INFO - Cargando datos crudos
+2025-07-11 17:15:25,637 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:15:25,638 - INFO - Iniciando preprocesamiento
+2025-07-11 17:15:25,765 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:15:25,765 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:15:25,814 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:15:30,394 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:15:30,395 - INFO - Buscando k 髉timo
+2025-07-11 17:15:49,256 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:15:54,165 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:15:54,191 - ERROR - Error en entrenamiento: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:15:54,191 - ERROR - Error en pipeline: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 36, in main
+    model = trainer.train_and_save(user_k, processed_df)
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\trainer.py", line 23, in train_and_save
+    full_pipeline.fit(processed_df)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 654, in fit
+    Xt = self._fit(X, y, routed_params, raw_params=params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 588, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ~~~~~~~~~~~~~~~~~~~~~~~~^
+        cloned_transformer,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        params=step_params,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\joblib\memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 468, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\decomposition\_pca.py", line 505, in _fit
+    X = validate_data(
+        self,
+    ...<5 lines>...
+        copy=False,
+    )
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 1107, in check_array
+    _assert_all_finite(
+    ~~~~~~~~~~~~~~~~~~^
+        array,
+        ^^^^^^
+    ...<2 lines>...
+        allow_nan=ensure_all_finite == "allow-nan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<4 lines>...
+        input_name=input_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+PCA does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-07-11 17:22:02,544 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:22:02,544 - INFO - Cargando datos crudos
+2025-07-11 17:22:02,741 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:22:02,742 - INFO - Iniciando preprocesamiento
+2025-07-11 17:22:02,875 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:22:02,876 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:22:02,936 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:22:07,826 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:22:07,827 - INFO - Buscando k 髉timo
+2025-07-11 17:22:26,357 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:22:28,278 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:22:28,280 - WARNING - Datos contienen NaN. Aplicando imputaci髇...
+2025-07-11 17:22:28,382 - INFO - Pipeline completo guardado en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 17:22:28,382 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 17:22:28,382 - ERROR - Error en evaluaci髇: 'Pipeline' object has no attribute 'labels_'
+2025-07-11 17:22:28,382 - ERROR - Error en pipeline: 'Pipeline' object has no attribute 'labels_'
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 39, in main
+    evaluator.evaluate_model(model, pca_df)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\evaluator.py", line 18, in evaluate_model
+    labels = model.labels_
+             ^^^^^^^^^^^^^
+AttributeError: 'Pipeline' object has no attribute 'labels_'
+2025-07-11 17:23:33,726 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:23:33,726 - INFO - Cargando datos crudos
+2025-07-11 17:23:34,028 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:23:34,029 - INFO - Iniciando preprocesamiento
+2025-07-11 17:23:34,169 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:23:34,169 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:23:34,242 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:23:39,098 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:23:39,099 - INFO - Buscando k 髉timo
+2025-07-11 17:23:57,637 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:24:58,914 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:24:58,916 - WARNING - Datos contienen NaN. Aplicando imputaci髇...
+2025-07-11 17:24:59,019 - INFO - Pipeline completo guardado en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 17:24:59,019 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 17:24:59,446 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,458 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,528 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,537 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,610 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,621 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,716 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,724 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,836 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,844 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,961 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:24:59,969 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,154 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,162 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,332 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,340 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,521 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,530 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,747 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,756 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,959 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:00,968 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:01,180 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:01,189 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:25:01,861 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 17:25:01,876 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 17:53:16,337 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 17:53:16,337 - INFO - Cargando datos crudos
+2025-07-11 17:53:16,500 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 17:53:16,502 - INFO - Iniciando preprocesamiento
+2025-07-11 17:53:16,629 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 17:53:16,629 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 17:53:16,691 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 17:53:22,276 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 17:53:22,276 - INFO - Buscando k 髉timo
+2025-07-11 17:53:42,060 - INFO - K 髉timo sugerido: 4
+2025-07-11 17:53:44,026 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 17:53:44,134 - INFO - Pipeline completo guardado en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 17:53:44,134 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 17:53:44,485 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,495 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,553 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,562 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,634 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,642 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,737 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,746 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,850 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,860 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,978 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:44,989 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,126 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,135 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,282 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,291 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,460 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,469 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,643 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,653 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,876 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:45,885 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:46,095 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:46,105 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 17:53:46,769 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 17:53:46,771 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 19:19:54,216 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 19:19:54,216 - INFO - Cargando datos crudos
+2025-07-11 19:19:54,399 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 19:19:54,401 - INFO - Iniciando preprocesamiento
+2025-07-11 19:19:54,525 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 19:19:54,526 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 19:19:54,571 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 19:20:01,708 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 19:20:01,709 - INFO - Buscando k 髉timo
+2025-07-11 19:20:06,245 - ERROR - Error en b鷖queda de k: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+2025-07-11 19:20:06,246 - ERROR - Error en pipeline: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+Traceback (most recent call last):
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\run_pipeline.py", line 28, in main
+    optimal_k = k_finder.find_optimal_k()
+  File "C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\pipeline\k_finder.py", line 22, in find_optimal_k
+    silhouettes.append(silhouette_score(df_pca, labels))
+                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\cluster\_unsupervised.py", line 139, in silhouette_score
+    return np.mean(silhouette_samples(X, labels, metric=metric, **kwds))
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\cluster\_unsupervised.py", line 303, in silhouette_samples
+    results = zip(*pairwise_distances_chunked(X, reduce_func=reduce_func, **kwds))
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 2252, in pairwise_distances_chunked
+    D_chunk = pairwise_distances(X_chunk, Y, metric=metric, n_jobs=n_jobs, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 2480, in pairwise_distances
+    return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 1973, in _parallel_pairwise
+    return func(X, Y, **kwds)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\utils\_param_validation.py", line 189, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 388, in euclidean_distances
+    return _euclidean_distances(X, Y, X_norm_squared, Y_norm_squared, squared)
+  File "C:\Users\destr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\metrics\pairwise.py", line 424, in _euclidean_distances
+    distances = -2 * safe_sparse_dot(X, Y.T, dense_output=True)
+                ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 738. MiB for an array with shape (9835, 9835) and data type float64
+2025-07-11 19:24:47,249 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 19:24:47,249 - INFO - Cargando datos crudos
+2025-07-11 19:24:47,434 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 19:24:47,435 - INFO - Iniciando preprocesamiento
+2025-07-11 19:24:47,587 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 19:24:47,588 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 19:24:47,646 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 19:24:54,378 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 19:24:54,379 - INFO - Buscando k 髉timo
+2025-07-11 19:25:17,359 - INFO - K 髉timo sugerido: 4
+2025-07-11 19:25:18,892 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 19:25:19,005 - INFO - Pipeline completo guardado en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 19:25:19,005 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 19:25:19,426 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,438 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,503 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,512 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,591 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,598 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,721 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,730 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,844 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,854 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,977 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:19,985 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,130 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,141 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,305 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,315 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,490 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,499 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,687 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,696 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,895 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:20,903 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:21,107 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:21,115 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:25:21,798 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 19:25:21,800 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====
+2025-07-11 19:42:52,629 - INFO - ==== INICIO DE PIPELINE ====
+2025-07-11 19:42:52,629 - INFO - Cargando datos crudos
+2025-07-11 19:42:52,813 - INFO - Datos filtrados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_processed.csv
+2025-07-11 19:42:52,815 - INFO - Iniciando preprocesamiento
+2025-07-11 19:42:52,960 - INFO - Datos preprocesados guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_preprocessed_KMEANS.csv
+2025-07-11 19:42:52,960 - INFO - Iniciando reducci髇 dimensional
+2025-07-11 19:42:53,025 - WARNING - Se encontraron 16547 valores NaN en los datos. Aplicando imputaci髇...
+2025-07-11 19:43:03,904 - INFO - Datos PCA guardados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\data/processed/employ_pca_9d.csv
+2025-07-11 19:43:03,905 - INFO - Buscando k 髉timo
+2025-07-11 19:43:24,019 - INFO - K 髉timo sugerido: 4
+2025-07-11 19:43:25,290 - INFO - Iniciando entrenamiento con k=4
+2025-07-11 19:43:25,383 - INFO - Pipeline completo guardado en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.joblib y C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\models/kmeans_model.pkl
+2025-07-11 19:43:25,384 - INFO - Generando reportes de evaluaci髇 y an醠isis
+2025-07-11 19:43:25,758 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:25,767 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:25,829 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:25,839 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:25,911 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:25,922 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,035 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,045 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,155 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,165 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,282 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,291 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,425 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,434 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,611 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,623 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,808 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:26,821 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,037 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,052 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,288 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,297 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,512 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:27,524 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-07-11 19:43:28,370 - INFO - Reportes completos generados en C:\Users\destr\Downloads\ML_FINAL\employ-kmeans\reports/cluster_analysis.csv
+2025-07-11 19:43:28,372 - INFO - ==== PIPELINE COMPLETADO EXITOSAMENTE ====

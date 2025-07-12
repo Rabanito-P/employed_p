@@ -1,0 +1,5 @@
+[EVALUACION] Modelo K-Means
+--------------------------------
+Silhouette Score:       0.3192 (mejor valores cercanos a 1)
+Calinski-Harabasz Index: 4776.23 (mejor valores altos)
+Davies-Bouldin Score:   1.1706 (mejor valores cercanos a 0)
